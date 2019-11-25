@@ -22,8 +22,13 @@ var coffee = {
     });
   },
   delete: function(condition, cb){
-    orm.delete("coffee", condition, function(res) {
+    orm.delete("coffees", condition, function(res) {
       cb(res)
+    })
+  },
+  updateRating: function(objColVals, condition, cb) {
+    orm.update("coffees", objColVals, condition, function(res){
+      cb(res);
     })
   }
 };
