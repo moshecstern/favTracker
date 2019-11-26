@@ -1,13 +1,15 @@
-<h1>Coffees!</h1>
+<div class= "container">
+<h1 class="text-center">Coffees!</h1>
 
 <h2>Coffees To Try!</h2>
 <div class="col-xs-12 text center" class="task">
-  <div class="row">
+  <div class="row ">
     {{#each coffees}}
     {{#unless drank}}
+<div class="row border m-1 p-1">
 
     <div class="col-xs-9 text-center">
-      <pre>ID: {{this.id}}.  Name: {{this.name}}. Type: {{this.type}}. Company: {{this.company}}. Rating: {{this.rating}}. caffeinated: {{this.caffeinated}}. </pre>
+      <pre class=>ID: {{this.id}}.  Name: {{this.name}}. Type: {{this.type}}. Company: {{this.company}}. Rating: {{this.rating}}. caffeinated: {{this.caffeinated}}. </pre>
     </div>
     <div class="col-xs-3 text-center">
       <button class="change-drank" data-id="{{id}}" data-newCoffee="{{drank}}">
@@ -17,16 +19,19 @@
       {{!-- <button class="change-rating" data-id="{{id}}" data-newrating="{{rating}}"></button> --}}
 
     </div>
+</div>
     {{/unless}}
     {{/each}}
   </div>
 </div>
 
 <h2>Coffees Tasted!</h2>
-<div class="col-xs-12 text center" class="task">
+<div class="col-xs-12 text center row" class="task">
   <div class="row">
     {{#each coffees}}
     {{#if drank}}
+    <div class="row border m-1 p-1">
+
     <div class="col-xs-9 text-center">
       <pre>ID: {{this.id}}.  Name: {{this.name}}. Type: {{this.type}}. Company: {{this.company}}. Rating: {{this.rating}}. caffeinated: {{this.caffeinated}}. </pre>
     </div>
@@ -35,43 +40,18 @@
         {{#if drank}}Order more{{else}}Tried it{{/if}}
       </button>
       <button class="deleteCoffee" data-id="{{id}}">X</button>
-    </div>
+    </div></div>
     {{/if}}
     {{/each}}
-  </div>
+ 
 </div>
 
-{{!-- <div class="col-xs-6 text-center" class="task">
-			{{#each cofees}}
-				{{#if this.drank}}
-					<input class="form-control" type="text" placeholder="{{this.id}}. {{this.name}}" readonly>
-				{{/if}}
-			{{/each}}
-		</div> --}}
 
 
-{{!-- <ul>
-  {{#each hbsObject}}
-    {{#unless drank}}
-      {{> coffee/coffee-block had=true}}
-    {{/unless}}
-  {{/each}}
-</ul> --}}
+<div id= "submit-sections"  class="row" >
+<div id= "add-coffee-section"class="col">
 
-{{!-- <h2>Coffees tasted</h2>
-
-<ul>
-  {{#each coffees}}
-  <div class="col-xs-9 text-center">
-					<pre>{{this.id}}.  {{this.name}}</pre>
-				</div> --}}
-{{!-- {{> coffee/coffee-block had=true}}
-    {{#if drank}}
-    {{/if}} --}}
-{{!-- {{/each}}
-</ul> --}}
-
-<h2>Add a Coffee</h2>
+<h2 >Add a Coffee</h2>
 <form class="create-form">
 
   <div class="form-group">
@@ -94,24 +74,43 @@
     <input type="number" id="rating" name="rating">
   </div>
 
-  <div class="form-group">
+<div class="row">
+
+  <div class="form-group col">
     <label for="caffeinated">caffeinated?</label><br>
     <input type="radio" name="caffeinated" value="1" checked> Caf<br>
     <input type="radio" name="caffeinated" value="0"> Decaf
   </div>
-
-  <div class="form-group">
+  <div class="form-group col">
     <label for="drank">Tasted?</label><br>
     <input type="radio" name="drank" value="1" checked> tasted!<br>
     <input type="radio" name="drank" value="0"> Not Tasted
   </div>
-
+<div class="col">
   <button type="submit">Add Coffee</button>
+</div>
+</div>
+
 </form>
+</div>
+
+<div id= "update-rating-section" class="col offset-3">
 
 <h2>Update Coffee Rating</h2>
 <form class="updaterating" class="button-size">
-  <input type="text" name="id" placeholder="id">
+  <div class="form-group">
+  <input type="number" name="id" placeholder="id">
+  </div>
+  <div class="form-group">
 	<textarea type="number" name="rating" id="new-rating-real" placeholder="1- 10"></textarea>
+  </div>
+  <div class="form-group">
 	<button type="submit">Update Rating!</button>
+  </div>
 </form>
+
+</div>
+</div> 
+{{!-- end of submit sections --}}
+</div>
+{{!-- end of container --}}
