@@ -1,4 +1,4 @@
-require("dotEnv").config();
+require("dotenv").config();
 
 var express = require("express");
 
