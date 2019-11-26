@@ -1,4 +1,7 @@
 body{
+        /* background-image: src="/public/assets/css/images/coffee.jpg" ; */
+    /* background-color: aqua; */
+   /* background-image:  url("/assets/images/coffee.jpg"); */
    background: radial-gradient(black, transparent);
 }
 pre{
